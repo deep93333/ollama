@@ -69,7 +69,7 @@ func (p *phi3) KV(t *Tokenizer) llm.KV {
 	return kv
 }
 
-func (p *phi3) Tensors(ts []Tensor) []llm.Tensor {
+func (p *phi3) Tensors(ts []Tensor, nameFunc NameFunc) []llm.Tensor {
 	var addRopeFactors sync.Once
 
 	out := make([]llm.Tensor, 0, len(ts)+2)
